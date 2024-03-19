@@ -110,5 +110,12 @@
       each Number.FromText(Text.Combine({Date.ToText([Date], "yyyy"), Date.ToText([Date], "MM")})), 
       Int64.Type
     )
-  in
-    #"Inserted Year Month"
+    #"Month Offset"= Table.AddColumn(
+    #"Inserted Year Month",
+    "Month Offset",
+    each (([Year]-Date.Year(DateTime.LocalNow()))*12) + [Month] -  Date.Month(DateTime.LocalNow()),  
+    Int64.Type
+    )
+
+in
+    #"Month Offset"
