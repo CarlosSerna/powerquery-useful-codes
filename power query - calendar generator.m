@@ -111,10 +111,10 @@
       Int64.Type
     ),
     #"Month Offset"= Table.AddColumn(
-    #"Inserted Year Month",
-    "Month Offset",
-    each (([Year]-Date.Year(DateTime.LocalNow()))*12) + [Month] -  Date.Month(DateTime.LocalNow()),  
-    Int64.Type
+      #"Inserted Year Month",
+      "Month Offset",
+      each (([Year]-Date.Year(DateTime.LocalNow()))*12) + [Month] -  Date.Month(DateTime.LocalNow()),  
+      Int64.Type
     )
 
 in
