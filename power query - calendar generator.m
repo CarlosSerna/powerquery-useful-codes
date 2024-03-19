@@ -109,7 +109,7 @@
       "Year Month", 
       each Number.FromText(Text.Combine({Date.ToText([Date], "yyyy"), Date.ToText([Date], "MM")})), 
       Int64.Type
-    )
+    ),
     #"Month Offset"= Table.AddColumn(
     #"Inserted Year Month",
     "Month Offset",
